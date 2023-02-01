@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 3</title>
+</head>
+<body>
+    <h1>Practice 3</h1>
+    <p>Để hoàn thành môn học, học viên CodeGym Online phải tham gia tối thiểu 75% tổng số buổi học.
+        Viết chương trình nhập vào tổng số buổi của khóa học và số buổi mà học viên đã tham gia.
+        Kiểm tra xem học viên đã tham gia tối thiểu 75% số buổi học hay chưa. 
+        Nếu có, in ra "true". Ngược lại, in ra "false".
+    </p>
+    <script>
+        let totallesson = parseInt(prompt("Please input total lesson in the course:"));
+        let actuallesson = parseInt(prompt("Please input actual lesson in the course:"));
+        let participationPercent = actuallesson / totallesson;
+        alert('Participation percent: ${participationPercent}')
+        alert('Result: ${participationPercent >= 0.75}');
+        </script>
+</body>
+</html>

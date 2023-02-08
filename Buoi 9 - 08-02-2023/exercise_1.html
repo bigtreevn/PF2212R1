@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1 - HTML DOM</title>
+</head>
+<body>
+    <h1 id="course-title">Python Course Syllabus</h1>
+    <ul>
+        <li id="lesson-1">Welcome to Python</li>
+        <li id="lesson-2">Python Fundamental</li>
+        <li id="lesson-3">Python Intermmediate</li>
+    </ul>
+
+    <script>
+        let coursetitleElement = document.getElementById("course-title");
+        coursetitleElement.innerHTML = "Javascript Course Syllabus";
+
+        let lesson1Element = document.getElementById("lesson-1");
+        lesson1Element.innerHTML = "Welcome to Javascript";
+
+        let lesson2Element = document.getElementById("lesson-2");
+        lesson2Element.innerHTML = "Javascript Fundamental";
+
+        let lesson3Element = document.getElementById("lesson-3");
+        lesson3Element.innerHTML = "Javascript Intermmediate";
+
+
+    </script>
+</body>
+</html>

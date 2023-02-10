@@ -13,34 +13,36 @@
      -->
     <h1>Registration Form</h1>
     <form action="#">
-        <fieldset id="old-action">
+        <fieldset>
             <legend>Company Information</legend>
             <label>Company Name: </label>
             <input type="text"><br>
             <label>Company Address: </label>
             <input type="text"><br>
-            <label id="C-phone">Company Phone Number: </label>
-            <input type="text" id="old-phone">
+            <label>Company Phone Number: </label>
+            <input id="company-phone" type="text">
         </fieldset>
-        <fieldset id="new-action">
+        <fieldset>
             <legend>Owner Information</legend>
             <label>Owner Name: </label>
             <input type="text"><br>
             <label>Owner Address: </label>
             <input type="text"><br>
-            <label id="O-phone">Owner Phone Number: </label>
-            <input type="text" id="new-phone">
+            <label >Owner Phone Number: </label>
+            <input id="owner-phone" type="text">
             <button id="btn-action">Same as company phone number</button>
         </fieldset>
     </form>
     <script>
         let btnaction = document.getElementById("btn-action");
-        let oldphone = document.getElementById("old-phone");
-        let newphone = document.getElementById("new-phone");
         btnaction.addEventListener('click', ()=>{
-            newphone.value=oldphone.value;
+            let companyphone = document.getElementById("company-phone");
+            let ownerphone = document.getElementById("owner-phone");
+            console.log(ownerphone.value);
+
+            ownerphone.value = companyphone.value;
         });
-        
+
     </script>
 </body>
 </html>

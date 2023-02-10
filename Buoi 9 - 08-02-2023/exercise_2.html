@@ -19,24 +19,24 @@
         <li id="old-item">Tropical Fruit Tea</li>
         <li>Peach Tea</li>
     </ul>
+    <button id="btn-update">Update Menu</button>
     <script>
-        let titleElement = document.getElementById("title")
-        titleElement.style.color = "red"
+        let btnUpdate = document.getElementById("btn-update");
 
-        let olditemElement = document.getElementById("old-item");
-        olditemElement.remove();
+        btnUpdate.addEventListener('click', () => {
+            let titleElement = document.getElementById("title")
+            let olditemElement = document.getElementById("old-item");
+            let menuElement = document.getElementById("menu");
+            let newmenuElement = document.createElement("li");
 
-       // add new "li" element to "ul" element
-       let menuElement = document.getElementById("menu");
+            newmenuElement.innerHTML = "Fruit Yogurt";
 
-//create new "li" element
-let newmenuElement = document.createElement("li");
-newmenuElement.innerHTML = "Fruit Yogurt";
-
-// console.log("New list item element");
-// console.log(newListItemElement);
-
-menuElement.appendChild(newmenuElement);
+            titleElement.style.color = "red";       
+            olditemElement.remove();
+        
+            menuElement.appendChild(newmenuElement);
+        })
+        
     </script>
 </body>
 </html>

@@ -7,15 +7,15 @@
     <title>Practice Condition Statement 1</title>
 </head>
 <form action="#">
-    Course: <input id="mark" type="text">
-    <button id="btn-action">Submit</button>
+    Nhập điểm: <input id="mark" type="text">
+    <button id="btn-action" type="button">Submit</button>
 </form>
 <script>
     let btnAction = document.getElementById("btn-action");
     btnAction.addEventListener("click", () => {
-        let diemso = document.getElementById("mark");
+        let diemso = document.getElementById("mark").value;
 
-        if (diemso.value >= "8.5"){
+        if (parseFloat(diemso) >= 8.5){
             console.log("Bạn được tuyển thẳng");
         } else {
             console.log("Bạn chưa đủ điểm");

@@ -1,12 +1,12 @@
 // Bài 1
-let btnAction = document.getElementById("btn-action");
-    btnAction.addEventListener("click", () => {
-        let chieudai = document.getElementById("length").value;
-        let chieurong = document.getAnimations("width").value;
+let btnAction1 = document.getElementById("btn-action-1");
+    btnAction1.addEventListener("click", () => {
+        let length = parseInt(document.getElementById("length").value);
+        let width = parseInt(document.getElementById("width").value);
 
-        if (parseFloat(chieudai) != (chieurong)){
-            console.log("Hình chữ nhật");
+        if (length == width){
+            alert("Đây là hình vuông");
         } else {
-            console.log("Hình vuông");
+            alert("Đây là hình chữ nhật");
         }
     });

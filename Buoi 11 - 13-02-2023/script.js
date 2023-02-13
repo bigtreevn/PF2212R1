@@ -50,3 +50,15 @@ let btnAction1 = document.getElementById("btn-action-1");
         else if (day==8) {alert("Chủ nhật - Sunday")};
         else if (day != 2, 3, 4, 5, 6, 7, 8) {alert("không phải thứ trong tuần")};
     });
+    // Bài 5
+    let btnAction5 = document.getElementById("btn-action-5");
+    btnAction5.addEventListener("click", () => {
+        let n1 = parseInt(document.getElementById("n1").value);
+        let n2 = parseInt(document.getElementById("n2").value);
+        let n3 = parseInt(document.getElementById("n3").value);
+
+        if (n1>n2) and (n2>=n3) {alert(`số lớn nhất là ${n1}`)};
+        else if(n2>n3) and (n3>=n1) {alert(`số lớn nhất là ${n2}`)};
+        else if(n3>n1) and (n1>=n2)  {alert(`số lớn nhất là ${n3}`)};
+
+    });

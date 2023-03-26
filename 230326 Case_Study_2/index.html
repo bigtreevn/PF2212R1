@@ -18,7 +18,7 @@ thể hiện các thông tin trên trong bảng -->
 <body>
     <h1>Hệ thống quản lý hàng tồn kho</h1>
 
-    <!-- Form nhập thông tin sản phẩm-->
+    <!-- Form nhập thông tin sản phẩm nhập -->
 <form action="#">
     <label for="">Tên sản phẩm:</label>
     <input type="text" name="" id="product-name"><br><br>
@@ -41,17 +41,25 @@ thể hiện các thông tin trên trong bảng -->
     <label for="">Số hóa đơn:</label>
     <input type="text" name="" id="product-outbill"><br><br>
 
+    <label for="">Số lượng tồn:</label>
+    <input type="text" name="" id="product-penquantity" disabled><br><br>
+
     <button type="reset">Reset</button>
-    <!-- Thêm sản phẩm-->
-     <button id="btn-add" type="button">Thêm sản phẩm</button>
+    <!-- Thêm sản phẩm nhập-->
+     <button id="btn-add" type="button">Thêm sản phẩm nhập</button>
     <br><br>
-    <!--Tìm kiếm sản phẩm-->
-     <label for="">Tìm kiếm sản phẩm:</label>
-     <input type="text" id="search-name">
-     <button id="btn-search" type="button" onclick="searchproduct()">Tìm kiếm sản phẩm</button>
+
+
+    <!--Tìm kiếm và xóa sản phẩm-->
+    <label for="">Tìm kiếm sản phẩm:</label>
+    <input type="text" id="search-name">
+    <button id="btn-search" type="button" onclick="searchproduct()">Tìm kiếm sản phẩm</button>
+    <button id="btn-delete" type="button" onclick="deleteproduct()">Xóa sản phẩm</button>
+
 
 </form>
-    <br><br>
+  
+<br><br>
 <!--Bảng hiển thị thông tin sản phẩm-->
 <table id="producttable">
     <thead>

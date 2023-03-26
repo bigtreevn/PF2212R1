@@ -1,4 +1,4 @@
-// thêm sản phẩm nhập
+// thêm sản phẩm
 class product {
   constructor(name, category, inquantity, inprice, outquantity, outprice, outbill, penquantity) {
     this.name = name;
@@ -64,12 +64,14 @@ btnAdd.addEventListener("click", () => {
   productList.push(newproduct);
   // console.log(productList);
 
-  alert(`sản phẩm "${newproduct}" đã được thêm`);
+  alert(`sản phẩm "${newproduct.name}" đã được thêm`);
   addProductToTable(newproduct);
 });
 //tìm kiếm sản phẩm
 function searchproduct() {
   let searchName = document.getElementById("search-name").value;
+  let check = false;
+
   //loop through each item in productList
   for (let i in productList) {
     if (productList[i].name.includes(searchName)) {
@@ -80,10 +82,58 @@ function searchproduct() {
       document.getElementById("product-outquantity").value = productList[i].outquantity;
       document.getElementById("product-outprice").value = productList[i].outprice;
       document.getElementById("product-outbill").value = productList[i].outbill;
+      document.getElementById("product-penquantity").value = productList[i].penquantity;
+      check = true;
 
-      console.log(productList[i]);
-      alert(`sản phẩm "${searchName}" : "${productList[i]} `)
+      // console.log(productList[i]);
+      alert(`sản phẩm "${searchName}" còn tồn "${productList[i].penquantity}" `);
       break;
     }
   }
+  if (check == false) {
+    alert("Sản phẩm không tồn tại!")
+  }
+}
+
+
+
+//xóa sản phẩm
+function deleteproduct() {
+let searchName = document.getElementById("search-name").value;
+let check = false;
+
+// loop through each item in productList
+
+for (let i in productList) {
+  if (productList[i].name.includes(searchName)) {
+      check = true;
+      console.log(productList[i]);
+      productList.splice(i, 1); // xóa sản phẩm
+      alert(`sản phẩm "${searchName}" đã được xóa khỏi danh sách `);
+      
+      break;
+      
+  }
+}
+if (check == false) {
+  alert("Sản phẩm không tồn tại!")
+}
+// console.log(updateProductTable()); 
+updateProductTable(); //cập nhật lại danh mục sản phẩm
+}
+
+ 
+function updateProductTable() {
+  let table = document.getElementById("producttable");
+  let rowCount = table.rows.length 
+    // xóa tất cả các hàng trong bảng
+  for ( let i = rowCount - 1; i >= 1; i--) {
+    table.deleteRow(i);
+  }
+  
+  // Thêm lại tất cả các sản phẩm từ productList
+  for (let i = 0; i < productList.length; i++) {
+       addProductToTable(productList[i]);
+  }
+  // console.log(addProductToTable());
 }
